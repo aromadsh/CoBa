@@ -1,0 +1,218 @@
+/* 기본 폰트 및 색상 */
+:root {
+  --primary-color: #1e3932; /* Starbucks Green */
+  --accent-color: #d4af37;  /* Gold */
+  --bg-color: #ffffff;
+  --text-color: #222;
+  --font-kr: 'Noto Sans KR', sans-serif;
+  --font-en: 'Lora', serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-kr);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+/* 네비게이션 */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  z-index: 100;
+}
+
+.navbar nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1rem 0;
+  margin: 0;
+  list-style: none;
+}
+
+.navbar nav ul li a {
+  text-decoration: none;
+  color: var(--primary-color);
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.navbar nav ul li a:hover {
+  color: var(--accent-color);
+}
+
+/* Hero 인트로 */
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000; /* fallback */
+}
+
+.hero-overlay {
+  text-align: center;
+  color: white;
+  text-shadow: 0 0 10px rgba(0,0,0,0.4);
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+}
+
+/* 배경 이미지 전용 */
+.hero-image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../images/hero-banner.png');
+  background-size: cover;
+  background-position: center;
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+  z-index: 1;
+}
+
+/* 텍스트 오버레이 */
+.hero-text-container {
+  position: relative;
+  text-align: center;
+  color: white;
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.hero-text-container h1 {
+  font-size: 3rem;
+  margin: 0;
+}
+
+.hero-text-container p {
+  font-size: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.hidden {
+  opacity: 0 !important;
+  pointer-events: none;
+}
+
+.visible {
+  opacity: 1 !important;
+}
+
+.hero-overlay h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  font-family: var(--font-en);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease-out;
+}
+
+.hero-overlay p {
+  font-size: 1.5rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease-out;
+}
+
+/* 공통 콘텐츠 영역 */
+.content {
+  padding: 6rem 2rem 4rem;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.content h2 {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* 프로젝트 카드 */
+.project-list {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.project-card {
+  background-color: #f8f8f8;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.project-card h3 {
+  margin-top: 0;
+  color: var(--primary-color);
+}
+
+.project-card a {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+/* 콘텐츠 리스트 */
+.content-list li {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.content-list a {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+.content-list a:hover {
+  color: var(--accent-color);
+}
+
+/* 푸터 */
+footer {
+  background-color: var(--primary-color);
+  color: white;
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.9rem;
+  margin-top: 4rem;
+}
+
+/* 스크롤 등장 효과 */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+  .hero-overlay h1 {
+    font-size: 2rem;
+  }
+  .hero-overlay p {
+    font-size: 1rem;
+  }
+}
