@@ -1,0 +1,39 @@
+@import url('style.css');
+
+.resume-section {
+  margin-top: 6rem;
+  padding: 4rem 2rem;
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: var(--bg-color);
+  font-family: var(--font-kr);
+  color: var(--text-color);
+}
+
+.resume-section h1 {
+  text-align: center;
+  font-family: var(--font-en);
+  color: var(--primary-color);
+  font-size: 3rem;
+  margin-bottom: 3rem;
+}
+
+.resume-block {
+  margin-bottom: 2.5rem;
+}
+
+.resume-block h2 {
+  font-size: 1.6rem;
+  color: var(--accent-color);
+  margin-bottom: 1rem;
+}
+
+.resume-block ul {
+  padding-left: 1.5rem;
+  line-height: 1.6;
+}
+
+.resume-block p {
+  line-height: 1.6;
+}
