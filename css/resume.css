@@ -1,39 +1,159 @@
-@import url('style.css');
+:root {
+  --primary-color: #5c3a1e;
+  --accent-color: #a9744f;
+  --bg-color: #f5ecd9;
+  --text-color: #3b2a1a;
+  --font-kr: 'Noto Sans KR', sans-serif;
+  --font-en: 'Lora', serif;
+}
 
-.resume-section {
-  margin-top: 6rem;
-  padding: 4rem 2rem;
-  max-width: 960px;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: var(--bg-color);
+body {
+  margin: 0;
   font-family: var(--font-kr);
+  background-color: var(--bg-color);
   color: var(--text-color);
 }
 
-.resume-section h1 {
+/* 네비게이션 */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgba(245, 236, 217, 0.95);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  z-index: 100;
+}
+
+.navbar nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1rem 0;
+  margin: 0;
+  list-style: none;
+}
+
+.navbar nav ul li a {
+  text-decoration: none;
+  color: var(--primary-color);
+  font-weight: bold;
+  font-family: var(--font-en);
+  transition: color 0.3s;
+}
+
+.navbar nav ul li a:hover {
+  color: var(--accent-color);
+}
+
+/* Resume Section */
+.resume-container {
+  margin-top: 6rem;
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.resume-title {
   text-align: center;
   font-family: var(--font-en);
-  color: var(--primary-color);
   font-size: 3rem;
+  color: var(--primary-color);
   margin-bottom: 3rem;
 }
 
-.resume-block {
-  margin-bottom: 2.5rem;
+/* 카드 레이아웃 */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
 }
 
-.resume-block h2 {
-  font-size: 1.6rem;
+.card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  border: 1px solid #e0d8c8;
+  background-color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  min-height: 250px;
+  padding: 2rem;
+  font-family: var(--font-kr);
+  transition: all 0.3s ease-in-out;
+}
+
+/* 요약 텍스트 (기본 보임) */
+.card-hover {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: var(--accent-color);
+  color: #fff;
+  font-size: 2rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+  font-family: var(--font-en);
+  z-index: 1;
+}
+
+/* 실제 내용은 기본 숨김 */
+.card-front {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  z-index: 2;
+  position: relative;
+}
+
+/* 호버 시: 요약 숨기고 front 보임 */
+.card:hover .card-hover {
+  opacity: 0;
+}
+
+.card:hover .card-front {
+  opacity: 1;
+}
+
+/* 텍스트 요소들 */
+.card h2 {
   color: var(--accent-color);
   margin-bottom: 1rem;
 }
 
-.resume-block ul {
+.card ul {
   padding-left: 1.5rem;
   line-height: 1.6;
 }
 
-.resume-block p {
+.card p {
   line-height: 1.6;
+}
+
+/* 푸터 */
+footer {
+  background-color: var(--primary-color);
+  color: #fff;
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.9rem;
+  margin-top: 4rem;
+  font-family: var(--font-en);
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .resume-title {
+    font-size: 2rem;
+  }
+
+  .navbar nav ul {
+    flex-direction: column;
+    gap: 1rem;
+  }
 }
