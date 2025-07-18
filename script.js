@@ -4,7 +4,7 @@ let currentCard = null;
 function drawCard() {
   const totalCards = 14;
   const randomIndex = Math.floor(Math.random() * totalCards) + 1;
-  const cardImage = `cards/${randomIndex}.PNG`;
+  const cardImage = `cards/${randomIndex}.png`;
 
   currentCard = randomIndex;
   hideAlert();
@@ -45,6 +45,6 @@ function hideAlert() {
 }
 
 function resetAImages() {
-  availableAImages = Array.from({ length: 12 }, (_, i) => `a-images/A${i + 1}.PNG`);
+  availableAImages = Array.from({ length: 12 }, (_, i) => `a-images/A${i + 1}.png`);
   hideAlert();
 }
