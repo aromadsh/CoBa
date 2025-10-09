@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CoBa | Experience</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/experience.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Lora&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="navbar">
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About me</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="experience.html">Experience</a></li>
+        <li><a href="activity.html">Activity</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="experience-container">
+    <h1 class="experience-title">My Experience Gallery</h1>
+
+    <div class="gallery-grid">
+      <!-- 갤러리 카드 1 -->
+      <div class="gallery-card" onclick="openModal(0)">
+        <img src="images/exp1.PNG" alt="프로젝트 1">
+        <div class="gallery-title">이미지 캡셔닝 기반의 감성 문구 생성 1</div>
+      </div>
+
+      <div class="gallery-card" onclick="openModal(1)">
+        <img src="images/exp2.PNG" alt="프로젝트 2">
+        <div class="gallery-title">ESG 모의 평가 및 챗봇</div>
+      </div>
+
+      <div class="gallery-card" onclick="openModal(2)">
+        <img src="images/exp3.PNG" alt="프로젝트 3">
+        <div class="gallery-title">사용자 목소리 기반의 음악 추천</div>
+      </div>
+
+      <!-- ... 9개 더 복제 가능 ... -->
+      <div class="gallery-card" onclick="openModal(3)">
+        <img src="images/exp4.PNG" alt="프로젝트 4">
+        <div class="gallery-title">검색 및 안내 NPC 챗봇</div>
+      </div>
+
+      <div class="gallery-card" onclick="openModal(4)">
+        <img src="images/exp5.PNG" alt="프로젝트 5">
+        <div class="gallery-title">이미지 캡셔닝 기반의 감성 문구 생성 2</div>
+      </div>
+
+      <div class="gallery-card" onclick="openModal(5)">
+        <img src="images/exp6.PNG" alt="프로젝트 6">
+        <div class="gallery-title">데이터 분석을 통한 타겟층 발굴</div>
+      </div>
+
+      <div class="gallery-card" onclick="openModal(6)">
+        <img src="images/exp7.PNG" alt="프로젝트 7">
+        <div class="gallery-title">구내식당 식수 인원 예측</div>
+      </div>
+
+      <div class="gallery-card" onclick="openModal(7)">
+        <img src="images/exp8.PNG" alt="프로젝트 8">
+        <div class="gallery-title">ATM 프로그램</div>
+      </div>
+
+      <div class="gallery-card" onclick="openModal(8)">
+        <img src="images/exp9.PNG" alt="프로젝트 9">
+        <div class="gallery-title">BCG 매트릭스 평가 프로그램</div>
+      </div>
+
+      <div class="gallery-card" onclick="openModal(9)">
+        <img src="images/exp10.PNG" alt="프로젝트 10">
+        <div class="gallery-title">메타버스 기반 채용 서비스 기획</div>
+      </div>
+
+      <div class="gallery-card" onclick="openModal(10)">
+        <img src="images/exp11.PNG" alt="프로젝트 11">
+        <div class="gallery-title">식품 브랜드 인지도 활성화 전략</div>
+      </div>
+
+      <div class="gallery-card" onclick="openModal(11)">
+        <img src="images/exp12.PNG" alt="프로젝트 12">
+        <div class="gallery-title">카페 영업 및 마케팅 전략</div>
+      </div>
+    </div>
+  </main>
+
+  <!-- 모달 -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close-button" onclick="closeModal()">&times;</span>
+      <h2 id="modal-title">프로젝트 제목</h2>
+      <p id="modal-description">프로젝트 상세 설명입니다. 이 부분은 클릭된 갤러리에 따라 다르게 바뀝니다.</p>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 CoBa. All rights reserved.</p>
+  </footer>
+
+  <script src="js/experience.js"></script>
+</body>
+</html>

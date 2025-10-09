@@ -1,0 +1,125 @@
+:root {
+  --primary-color: #5c3a1e;   /* 진한 다크 브라운 */
+  --accent-color: #a9744f;    /* 카라멜 브라운 포인트 */
+  --bg-color: #f5ecd9;        /* 따뜻한 연한 베이지 */
+  --text-color: #3b2a1a;      /* 일반 본문 색상 */
+  --font-kr: 'Noto Sans KR', sans-serif;
+  --font-en: 'Lora', serif;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-kr);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+/* 네비게이션 바 */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgba(245, 236, 217, 0.95); /* 베이지 반투명 */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  z-index: 100;
+}
+
+.navbar nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1rem 0;
+  margin: 0;
+  list-style: none;
+}
+
+.navbar nav ul li a {
+  text-decoration: none;
+  color: var(--primary-color);
+  font-weight: bold;
+  font-family: var(--font-en);
+  transition: color 0.3s;
+}
+
+.navbar nav ul li a:hover {
+  color: var(--accent-color);
+}
+
+/* Hero 섹션 */
+.hero {
+  position: relative;
+  height: 100vh;
+  background-color: var(--bg-color);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 배경 이미지 레이어 */
+.hero-image-overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../images/hero-banner.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: opacity 1s ease-in-out;
+  z-index: 1;
+}
+
+/* 텍스트 레이어 */
+.hero-text {
+  position: absolute;
+  text-align: center;
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  margin: 0;
+  color: var(--primary-color);
+  font-family: var(--font-en);
+  text-shadow: 0 0 4px rgba(255,255,255,0.4);
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  color: var(--primary-color);
+  font-family: var(--font-en);
+  margin-top: 0.5rem;
+}
+
+/* 상태 클래스 */
+.hidden {
+  opacity: 0 !important;
+  pointer-events: none;
+}
+.visible {
+  opacity: 1 !important;
+}
+
+/* 푸터 */
+footer {
+  background-color: var(--primary-color);
+  color: #fff;
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.9rem;
+  margin-top: 4rem;
+  font-family: var(--font-en);
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+  .hero-text p {
+    font-size: 1rem;
+  }
+}
